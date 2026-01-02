@@ -1,0 +1,48 @@
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+.glass-panel {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+}
+
+.tab-active {
+    border-bottom: 2px solid #2563eb;
+    color: #2563eb;
+    font-weight: 600;
+}
+
+.tab-inactive {
+    color: #64748b;
+    font-weight: 500;
+}
+
+#reader-gen ::-webkit-scrollbar,
+#reader-pos ::-webkit-scrollbar {
+    width: 8px;
+}
+
+#reader-gen ::-webkit-scrollbar-thumb,
+#reader-pos ::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+}
+
+@keyframes checkmark {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.animate-check {
+    animation: checkmark 0.5s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
