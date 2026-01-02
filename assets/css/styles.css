@@ -29,6 +29,58 @@ body {
     border-radius: 4px;
 }
 
+#reader-gen,
+#reader-pos {
+    color: #e2e8f0;
+}
+
+#reader-gen *,
+#reader-pos * {
+    color: #e2e8f0 !important;
+}
+
+#reader-gen button,
+#reader-pos button {
+    background: #2563eb;
+    color: #ffffff !important;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+#reader-gen button:hover,
+#reader-pos button:hover {
+    background: #1d4ed8;
+}
+
+#reader-gen select,
+#reader-pos select,
+#reader-gen input,
+#reader-pos input {
+    background: #0f172a;
+    color: #e2e8f0;
+    border: 1px solid #334155;
+    border-radius: 0.5rem;
+    padding: 0.35rem 0.5rem;
+    font-size: 0.75rem;
+}
+
+#reader-gen select:focus,
+#reader-pos select:focus,
+#reader-gen input:focus,
+#reader-pos input:focus {
+    outline: 2px solid #2563eb;
+    outline-offset: 2px;
+}
+
+#reader-gen a,
+#reader-pos a {
+    color: #93c5fd !important;
+    text-decoration-color: #93c5fd;
+}
+
 @keyframes checkmark {
     0% {
         transform: scale(0);
