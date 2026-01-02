@@ -1,9 +1,30 @@
 let scanner = null;
 let activeWrapper = null;
 
+function buildScannerConfig() {
+    const config = { fps: 10, qrbox: 250 };
+    if (typeof Html5QrcodeScanType !== "undefined") {
+        config.supportedScanTypes = [
+            Html5QrcodeScanType.SCAN_TYPE_CAMERA,
+            Html5QrcodeScanType.SCAN_TYPE_FILE,
+        ];
+    }
+    return config;
+}
+
 function createScanner(readerId, onScan) {
-    scanner = new Html5QrcodeScanner(readerId, { fps: 10, qrbox: 250 });
-    scanner.render((text) => onScan(text));
+    if (typeof Html5QrcodeScanner === "undefined") {
+        alert("Scanner belum tersedia. Muat ulang halaman dan pastikan koneksi stabil.");
+        return;
+    }
+
+    const target = document.getElementById(readerId);
+    if (target) {
+        target.innerHTML = "";
+    }
+
+    scanner = new Html5QrcodeScanner(readerId, buildScannerConfig());
+    scanner.render((text) => onScan(text), () => {});
 }
 
 export function toggleScanner({ wrapper, readerId, onScan }) {
